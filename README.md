@@ -1,2 +1,2 @@
-# rusttest
-rust test
+# rust tutorial
+rust tutorial

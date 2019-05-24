@@ -1,5 +1,5 @@
 [package]
-name = "rusttest"
+name = "rust-tutorial"
 version = "0.1.0"
 authors = ["leleact <leleact@gmail.com>"]
 edition = "2018"

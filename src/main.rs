@@ -1,5 +1,14 @@
+mod traits;
+
+use crate::traits::use_of_traits::st::Article;
 fn main() {
-    println!("Hello, world!");
+    let article = Article {
+        headline: String::from("use of traits"),
+        location: String::from("2"),
+        author: String::from("leleact"),
+        content: String::from("use summarize trait function must import mod explicitly"),
+    };
+    println!("{:?}", article);
 }
 
 #[cfg(test)]
