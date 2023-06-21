@@ -1,0 +1,35 @@
+name: rust tutorial
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.platform.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - { target: x86_64-pc-windows-msvc, os: windows-latest }
+          - {
+              target: aarch64-pc-windows-msvc,
+              os: windows-latest,
+              args: --no-default-features --features native-tls-vendored,
+            }
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-latest }
+          - { target: x86_64-apple-darwin, os: macos-latest }
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          targets: ${{ matrix.platform.target }}
+      - name: build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --all-features
+      - run: |
+          cargo test -- --nocapture
