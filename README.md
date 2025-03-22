@@ -1,7 +1,7 @@
 # rust tutorial
 ---------------
 
-![Build Status](https://github.com/leleact/rust-tutorial/actions/workflows/test.yaml/badge.svg)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/leleact/rust-tutorial/test.yaml?style=for-the-badge)](https://github.com/leleact/rust-tutorial)
 
 ## run test
 
